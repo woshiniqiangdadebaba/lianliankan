@@ -19,20 +19,20 @@ private:
 
     QGroupBox* type_box;
     QRadioButton* animal_button;
-    QRadioButton* life_button;
-    QRadioButton* dota_button;
+    QRadioButton* fruit_button;
+    QRadioButton* vehicle_button;
 
     QPushButton* ok_button;
 
 public:
     Option(QWidget* parent = 0);
-    int getlevels();//得到默认或选择后的难度值
+    int getlevels();
 
 public slots:
-    void changeOption();//槽函数，改变难度和图片类型
+    void changeOption();
 
 signals:
-    void newOption(int,int);//信号函数，将改变后的难度与图片类型所对应的值传递给GameMap 类的对象
+    void newOption(int,int);
 
 };
 

@@ -9,7 +9,6 @@
 #include<QAction>
 #include<QPushButton>
 #include<QTimer>
-#include<QDialog>
 
 namespace Ui {
 class MainWindow;
@@ -38,7 +37,7 @@ private:
 private slots:
     void goStop();
     void goStart();
-
+    void restart();
     void call_newgame();
     void call_judge();
     void call_hint();

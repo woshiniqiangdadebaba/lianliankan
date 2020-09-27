@@ -11,6 +11,17 @@ Map::Map(QWidget* parent):QDialog(parent)
     newOption(level,type);
 }
 
+int Map::getLevel()
+{
+    return level;
+}
+
+int Map::getType()
+{
+    return type;
+}
+
+
 void Map::newGame(QPushButton *btn[])
 {
     init_ic(level);
@@ -30,23 +41,51 @@ void Map::init_ic(int level)
     int k=0;
 
     //A组图片
-    for(int i=0;i<1+6*(level-1);i++)
+    if(level==1) //简单
     {
-        for(int j=0;j<4;j++)
+        //
+        for(int i=1;i<11;i++)
         {
-            ic[k++]=i;
+            for(int j=0;j<4;j++)
+            {
+                ic[k++]=i;
+            }
+        }
+        for(int i=11;i<=20;i++)
+        {
+            for(int j=0;j<6;j++)
+            {
+                ic[k++]=i;
+            }
         }
     }
-
-    //B组图片
-    for(int i=1+6*(level-1);i<17+2*(level-1);i++)
+    else if(level==2)
     {
-        for(int j=0;j<6;j++)
+        for(int i=1;i<11;i++)
         {
-            ic[k++]=i;
+            for(int j=0;j<4;j++)
+            {
+                ic[k++]=i;
+            }
+        }
+        for(int i=11;i<=20;i++)
+        {
+            for(int j=0;j<6;j++)
+            {
+                ic[k++]=i;
+            }
         }
     }
-
+    else if(level==3)
+    {
+        for(int i=1;i<=25;i++)
+        {
+            for(int j=0;j<4;j++)
+            {
+                ic[k++]=i;
+            }
+        }
+    }
     //交换
     srand((unsigned int)time(NULL));
     for(int i=0;i<200;i++)
@@ -67,24 +106,24 @@ void Map::add_icon(int type, QPushButton *button[])
     {
         for(int i=0;i<100;i++)
         {
-            button[i]->setIcon(QIcon(":/life/"+QString::number(ic[i])));
-            button[i]->setIconSize(QSize(50,50));
+            button[i]->setIcon(QIcon(":/animal/"+QString::number(ic[i])));
+            button[i]->setIconSize(QSize(40,40));
         }
     }
     if(type==2)
     {
         for(int i=0;i<100;i++)
         {
-            button[i]->setIcon(QIcon(":/animal/"+QString::number(ic[i])));
-            button[i]->setIconSize(QSize(50,50));
+            button[i]->setIcon(QIcon(":/fruit/"+QString::number(ic[i])));
+            button[i]->setIconSize(QSize(40,40));
         }
     }
     if(type==3)
     {
         for(int i=0;i<100;i++)
         {
-            button[i]->setIcon(QIcon(":/dota/"+QString::number(ic[i])));
-            button[i]->setIconSize(QSize(50,50));
+            button[i]->setIcon(QIcon(":/vehicle/"+QString::number(ic[i])));
+            button[i]->setIconSize(QSize(40,40));
         }
     }
 }
@@ -192,6 +231,48 @@ bool Map::hint(QPushButton *button[])
     return 0;
 }
 
+//重新生成
+
+void Map::generate(int type, QPushButton *button[])
+{
+    //交换
+    srand((unsigned int)time(NULL));
+    for(int i=0;i<200;i++)
+    {
+        int rand_num1=rand()%100;
+        int rand_num2=rand()%100;
+
+        if(button[rand_num1]->isVisible()&&button[rand_num2]->isVisible()){
+            int temp=ic[rand_num1];
+            ic[rand_num1]=ic[rand_num2];
+            ic[rand_num2]=temp;
+        }
+    }
+    if(type==1)
+    {
+        for(int i=0;i<100;i++)
+        {
+            button[i]->setIcon(QIcon(":/animal/"+QString::number(ic[i])));
+            button[i]->setIconSize(QSize(40,40));
+        }
+    }
+    if(type==2)
+    {
+        for(int i=0;i<100;i++)
+        {
+            button[i]->setIcon(QIcon(":/fruit/"+QString::number(ic[i])));
+            button[i]->setIconSize(QSize(40,40));
+        }
+    }
+    if(type==3)
+    {
+        for(int i=0;i<100;i++)
+        {
+            button[i]->setIcon(QIcon(":/vehicle/"+QString::number(ic[i])));
+            button[i]->setIconSize(QSize(40,40));
+        }
+    }
+}
 //判断输赢
 bool Map::win_loss(QPushButton *button[])
 {

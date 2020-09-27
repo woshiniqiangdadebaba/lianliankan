@@ -2969,7 +2969,7 @@
     <property name="geometry">
      <rect>
       <x>720</x>
-      <y>240</y>
+      <y>300</y>
       <width>81</width>
       <height>51</height>
      </rect>
@@ -3016,138 +3016,45 @@
      <string>You win!</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label">
+   <widget class="QPushButton" name="restart">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>921</width>
-      <height>671</height>
+      <x>720</x>
+      <y>240</y>
+      <width>81</width>
+      <height>51</height>
      </rect>
     </property>
     <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap resource="beijing.qrc">:/new/prefix1/b1.jpg</pixmap>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
+     <string>重新开始</string>
     </property>
    </widget>
-   <zorder>label</zorder>
-   <zorder>btn93</zorder>
-   <zorder>btn71</zorder>
-   <zorder>btn87</zorder>
-   <zorder>btn24</zorder>
-   <zorder>btn18</zorder>
-   <zorder>btn16</zorder>
-   <zorder>btn28</zorder>
-   <zorder>btn32</zorder>
-   <zorder>btn79</zorder>
-   <zorder>btn12</zorder>
-   <zorder>btn41</zorder>
-   <zorder>btn36</zorder>
-   <zorder>btn94</zorder>
-   <zorder>btn10_5</zorder>
-   <zorder>btn9_10</zorder>
-   <zorder>btn44</zorder>
-   <zorder>btn98</zorder>
-   <zorder>btn14</zorder>
-   <zorder>btn59</zorder>
-   <zorder>btn10_8</zorder>
-   <zorder>btn53</zorder>
-   <zorder>btn10_10</zorder>
-   <zorder>btn49</zorder>
-   <zorder>btn13</zorder>
-   <zorder>btn10_4</zorder>
-   <zorder>btn26</zorder>
-   <zorder>btn22</zorder>
-   <zorder>btn8_10</zorder>
-   <zorder>btn81</zorder>
-   <zorder>btn75</zorder>
-   <zorder>btn10_2</zorder>
-   <zorder>btn64</zorder>
-   <zorder>btn57</zorder>
-   <zorder>btn52</zorder>
-   <zorder>btn43</zorder>
-   <zorder>btn73</zorder>
-   <zorder>btn54</zorder>
-   <zorder>btn99</zorder>
-   <zorder>btn91</zorder>
-   <zorder>btn10_6</zorder>
-   <zorder>btn48</zorder>
-   <zorder>btn77</zorder>
-   <zorder>btn15</zorder>
-   <zorder>btn7_10</zorder>
-   <zorder>btn42</zorder>
-   <zorder>btn10_3</zorder>
-   <zorder>btn65</zorder>
-   <zorder>btn56</zorder>
-   <zorder>btn51</zorder>
-   <zorder>btn47</zorder>
-   <zorder>btn21</zorder>
-   <zorder>btn95</zorder>
-   <zorder>btn29</zorder>
-   <zorder>btn35</zorder>
-   <zorder>btn82</zorder>
-   <zorder>btn88</zorder>
-   <zorder>btn10_1</zorder>
-   <zorder>btn11</zorder>
-   <zorder>btn31</zorder>
-   <zorder>btn34</zorder>
-   <zorder>btn58</zorder>
-   <zorder>btn25</zorder>
-   <zorder>btn33</zorder>
-   <zorder>btn39</zorder>
-   <zorder>btn46</zorder>
-   <zorder>btn67</zorder>
-   <zorder>btn17</zorder>
-   <zorder>btn27</zorder>
-   <zorder>btn66</zorder>
-   <zorder>btn23</zorder>
-   <zorder>btn89</zorder>
-   <zorder>btn38</zorder>
-   <zorder>btn10_9</zorder>
-   <zorder>btn55</zorder>
-   <zorder>btn96</zorder>
-   <zorder>btn2_10</zorder>
-   <zorder>btn69</zorder>
-   <zorder>btn10_7</zorder>
-   <zorder>btn5_10</zorder>
-   <zorder>btn83</zorder>
-   <zorder>btn4_10</zorder>
-   <zorder>btn63</zorder>
-   <zorder>btn84</zorder>
-   <zorder>btn72</zorder>
-   <zorder>btn6_10</zorder>
-   <zorder>btn19</zorder>
-   <zorder>btn74</zorder>
-   <zorder>btn1_10</zorder>
-   <zorder>btn92</zorder>
-   <zorder>btn62</zorder>
-   <zorder>btn3_10</zorder>
-   <zorder>btn85</zorder>
-   <zorder>btn37</zorder>
-   <zorder>btn61</zorder>
-   <zorder>btn86</zorder>
-   <zorder>btn45</zorder>
-   <zorder>btn76</zorder>
-   <zorder>btn97</zorder>
-   <zorder>btn68</zorder>
-   <zorder>btn78</zorder>
-   <zorder>helpText</zorder>
-   <zorder>pause</zorder>
-   <zorder>begin</zorder>
-   <zorder>gameOver</zorder>
-   <zorder>help_text</zorder>
-   <zorder>timeCount</zorder>
-   <zorder>hint</zorder>
-   <zorder>start</zorder>
-   <zorder>choose</zorder>
-   <zorder>over</zorder>
-   <zorder>fail</zorder>
-   <zorder>win</zorder>
+   <widget class="QLabel" name="error">
+    <property name="geometry">
+     <rect>
+      <x>250</x>
+      <y>230</y>
+      <width>291</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>15</pointsize>
+      <weight>75</weight>
+      <italic>false</italic>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">
+font: bold 15pt;
+</string>
+    </property>
+    <property name="text">
+     <string>该图已无解,请重新开始！</string>
+    </property>
+   </widget>
   </widget>
   <action name="actionre">
    <property name="text">
@@ -3161,8 +3068,6 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="beijing.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

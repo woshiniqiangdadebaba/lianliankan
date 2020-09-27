@@ -23,11 +23,13 @@ private:
 
 public:
     Map(QWidget* parent = 0);//控件不是任何类的子控件
-
+    int getLevel();
+    int getType();
     void init_ic(int level);
     void add_icon(int type, QPushButton *button[]);
 
     void newGame(QPushButton *bt[]);
+    void generate(int type, QPushButton *button[]);
 
     bool is_linkable(QPushButton *button[], int, int, int, int);
     void judge(QPushButton *button[]);

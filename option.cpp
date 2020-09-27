@@ -26,18 +26,18 @@ Option::Option(QWidget* parent):QDialog(parent)
 
 
     //图片类型选择
-    life_button = new QRadioButton("生活");
-    life_button->setChecked(1);//默认生活
-
     animal_button = new QRadioButton("动物");
-    dota_button = new QRadioButton("魔兽");
+    animal_button->setChecked(1);//默认为动物
+
+    fruit_button = new QRadioButton("果蔬");
+    vehicle_button = new QRadioButton("交通工具");
     type_box = new QGroupBox("图片类型");
 
     //type 垂直排布
     QVBoxLayout* type_layout = new QVBoxLayout;
-    type_layout->addWidget(life_button);
     type_layout->addWidget(animal_button);
-    type_layout->addWidget(dota_button);
+    type_layout->addWidget(fruit_button);
+    type_layout->addWidget(vehicle_button);
     type_box->setLayout(type_layout);
 
     //确定键 水平排布
@@ -71,17 +71,17 @@ Option::Option(QWidget* parent):QDialog(parent)
 void Option::changeOption()
 {
     if(easy_button->isChecked())
-     levels = 1;  // 4*1 + 6*16 300s
+     levels = 1;  // 4*10 + 6*10 300s
     if(mid_button->isChecked())
-     levels = 2;  // 4*7 + 6*12 200s
+     levels = 2;  // 4*10 + 6*10 200s
     if(hard_button->isChecked())
-     levels = 3;  // 4*13 + 6*8 100s
+     levels = 3;  // 4x20 100s
 
-    if(life_button->isChecked())
-     types = 1;  //life
     if(animal_button->isChecked())
+     types = 1;  //life
+    if(fruit_button->isChecked())
      types = 2;  //animal
-    if(dota_button->isChecked())
+    if(vehicle_button->isChecked())
      types = 3; //dota
 
     emit newOption(levels,types);
